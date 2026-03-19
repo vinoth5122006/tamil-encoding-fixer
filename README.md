@@ -1,9 +1,13 @@
 # Context-Aware Tanglish to Tamil Transliteration
+
 A Natural Language Processing (NLP) project that converts **Tanglish (Tamil written in English)** into **Tamil script**, while resolving **word ambiguity using contextual understanding**.
+
 ---
 ## Overview
+
 This project addresses a key challenge in transliteration — **ambiguity resolution**.
 It not only converts Tanglish text into Tamil but also selects the **correct meaning based on context**.
+
 ---
 ## Objective
 * Convert Tanglish text into Tamil
