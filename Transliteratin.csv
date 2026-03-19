@@ -1,0 +1,76 @@
+﻿Column1,Column2,Column3,Column4,Column5,Column6,Column7,Column8,Column9
+Tanglish Sentence,Previous Chat(Context),Ambiguous Word,Tamil Candidates,Context Meaning,Correct Tamil Output,Normalized_Tanglish,Normalized_Context,Combined
+mudi vettikuren,haircut poga poren,mudi,முடி / மூடி / மொடி,hair,முடி,mudi vettikuren,haircut poga poren,haircut poga poren mudi vettikuren
+moodi vechirukuren,container ah close panren,moodi,முடி / மூடி / மொடி,"lid,cap",மூடி,moodi vechirukuren,container ah close panren,container ah close panren moodi vechirukuren
+modi potturukku,jewellery wear panniruken,modi,முடி / மூடி / மொடி,bud/bracelet,மொடி,modi potturukku,jewellery wear panniruken,jewellery wear panniruken modi potturukku
+palam venum,strong aaganum,palam,பலம் / பாலம் / பழம்,strength,பலம்,palam venum,strong aaganum,strong aaganum palam venum
+paalam katturaanga,river cross panna,paalam,பலம் / பாலம் / பழம்,bridge,பாலம்,paalam katturaanga,river cross panna,river cross panna paalam katturaanga
+palam saapiduren,fruit tinren,palam,பலம் / பாலம் / பழம்,fruit ,பழம்,palam saapiduren,fruit tinren,fruit tinren palam saapiduren
+kalai neram vandhаchu,morning ah solraangak,kalai,காலை / கலை,morning,காலை,kalai neram vandhаchu,morning ah solraangak,morning ah solraangak kalai neram vandhаchu
+kalai padam pudhusu,drawing pathi pesuraanga,kalai,காலை / கலை,art,கலை,kalai padam pudhusu,drawing pathi pesuraanga,drawing pathi pesuraanga kalai padam pudhusu
+ponga veetuku,cooker la rice iruku,ponga,போங்க / பொங்க,go,போங்க,ponga veetuku,cooker la rice iruku,cooker la rice iruku ponga veetuku
+ponga inga vaanga,people leave panraanga,ponga,போங்க / பொங்க,overflow,பொங்க,ponga inga vaanga,people leave panraanga,people leave panraanga ponga inga vaanga
+pani neram,snow vandhuruchu,pani,பனி / பணி,dew/snow,பனி,pani neram,snow vandhuruchu,snow vandhuruchu pani neram
+pani seiyavendi iruku,work pending,pani,பனி / பணி,work,பணி,pani seiyavendi iruku,work pending,work pending pani seiyavendi iruku
+vara solluna,office la iruken,vara,வர / வார,come,வர,vara solluna,office la iruken,office la iruken vara solluna
+vara mudiyathu da,next week leave illa,vara,வர / வார,week,வார,vara mudiyathu da,next week leave illa,next week leave illa vara mudiyathu da
+aazhudhu pochu,ava iniku romba sad ah irundha,aazhudhu,அழுது / அழுத்து,cried,அழுது,aazhudhu pochu,ava iniku romba sad ah irundha,ava iniku romba sad ah irundha aazhudhu pochu
+aazhudhu vaachu paaru,idhu button strong ah illa,aazhudhu,அழுது / அழுத்து,press,அழுத்து,aazhudhu vaachu paaru,idhu button strong ah illa,idhu button strong ah illa aazhudhu vaachu paaru
+valai pottanga,fishing poraanga,valai,வலை / வாளை / வழை,net,வலை,valai pottanga,fishing poraanga,fishing poraanga valai pottanga
+vaalai meen vaangittaya,market la fish venum,vaalai,வலை / வாளை / வழை,vaalai fish,வாளை,vaalai meen vaangittaya,market la fish venum,market la fish venum vaalai meen vaangittaya
+valai kottuduch,banana plant ripe aachu,vaalai,வலை / வாளை / வழை,banana plant,வழை,valai kottuduch,banana plant ripe aachu,banana plant ripe aachu valai kottuduch
+kudi tanni,water kudikuren,kudi,குடி / கூடி / கொடி,drink,குடி,kudi tanni,water kudikuren,water kudikuren kudi tanni
+koodi pesalama,ellaarum serthu talk,koodi,குடி / கூடி / கொடி,together,கூடி,koodi pesalama,ellaarum serthu talk,ellaarum serthu talk koodi pesalama
+kodi parakuthu,flag wave aaguthu,kodi,குடி / கூடி / கொடி,flag,கொடி,kodi parakuthu,flag wave aaguthu,flag wave aaguthu kodi parakuthu
+ilai veenudchu,tree la leaf fall aachu,ilai,இலை / இளை,leaf,இலை,ilai veenudchu,tree la leaf fall aachu,tree la leaf fall aachu ilai veenudchu
+ilai paiyandaan,young boy dhaan,ilai,இலை / இளை,young,இளை,ilai paiyandaan,young boy dhaan,young boy dhaan ilai paiyandaan
+podi pottanga,powder add pannaanga,podi,பொடி / பொடி,powder,பொடி,podi pottanga,powder add pannaanga,powder add pannaanga podi pottanga
+podi paiyane,small boy dhaan,podi,பொடி / பொடி,small,பொடி,podi paiyane,small boy dhaan,small boy dhaan podi paiyane
+adi pattuduchi,hit aayiduchu,adi,அடி / ஆடி,hit,அடி,adi pattuduchi,hit aayiduchu,hit aayiduchu adi pattuduchi
+adi maasam vandhuduchi,Tamil month Aadi,adi,அடி / ஆடி,month,ஆடி,adi maasam vandhuduchi,tamil month aadi,tamil month aadi adi maasam vandhuduchi
+malai povoma,eppo pohalam,malai,மலை /மாலை /மழை ,evening ,மாலை ,malai povoma,eppo pohalam,eppo pohalam malai povoma
+malai peiyuthu,vanilai eppadi irukku,malai,மலை /மாலை /மழை ,weather ,மழை ,malai peiyuthu,vanilai eppadi irukku,vanilai eppadi irukku malai peiyuthu
+malai aeruvoma,enga pohalam,malai,மலை /மாலை /மழை ,mountain ,மலை ,malai aeruvoma,enga pohalam,enga pohalam malai aeruvoma
+malai vangittaya ,kovil porom,malai ,மலை /மாலை /மழை ,necklace ,மாலை ,malai vangittaya,kovil porom,kovil porom malai vangittaya
+evalo neelam irukkum,alavu edukkanum,neelam,நீலம் /நீளம் ,length ,நீளம் ,evalo neelam irukkum,alavu edukkanum,alavu edukkanum evalo neelam irukkum
+neela niram,enna colour ,neelam,நீலம் /நீளம் ,colour ,நீலம் ,neela niram,enna colour,enna colour neela niram
+pattu paduren ,enna panra ,pattu ,பட்டு /பாட்டு ,song ,பாட்டு ,pattu paduren,enna panra,enna panra pattu paduren
+pattu pudavai ,enna dress ,pattu ,பட்டு /பாட்டு ,silk ,பட்டு ,pattu pudavai,enna dress,enna dress pattu pudavai
+nagam vettitaya ,enna panra ,nagam ,நகம் /நாகம் ,nails ,நகம் ,nagam vettitaya,enna panra,enna panra nagam vettitaya
+nagam kothiruchu ,eppadi sethan ,nagam ,நகம் /நாகம் ,snake ,நாகம் ,nagam kothiruchu,eppadi sethan,eppadi sethan nagam kothiruchu
+padam pakuren ,enna panra ,padam ,படம் /பாடம் ,movie ,படம் ,padam pakuren,enna panra,enna panra padam pakuren
+padam padikkuren ,enna panra ,padam ,படம் /பாடம் ,studies ,பாடம் ,padam padikkuren,enna panra,enna panra padam padikkuren
+varam venum ,vunakku enna venum ,varam ,வரம் /வாரம் ,blessing ,வரம் ,varam venum,vunakku enna venum,vunakku enna venum varam venum
+adutha varam varuven ,eppo varuva ,varam ,வரம் /வாரம் ,week ,வாரம் ,adutha varam varuven,eppo varuva,eppo varuva adutha varam varuven
+kodi roopai,evlo cost,kodi,கோடி / கொடி ,money ,கோடி ,kodi roopai,evlo cost,evlo cost kodi roopai
+kodi padarnthathu,plant nalla valarutha ,kodi,கோடி / கொடி ,plant ,கொடி ,kodi padarnthathu,plant nalla valarutha,plant nalla valarutha kodi padarnthathu
+innum katchi start aagala,meeting start panna sollunga,katchi ,கட்சி /காட்சி ,party ,கட்சி ,innum katchi start aagala,meeting start panna sollunga,meeting start panna sollunga innum katchi start aagala
+indha  katchi nalla iruku,movie pathi pesitu iruntaanga,katchi ,கட்சி /காட்சி ,scene ,காட்சி ,indha katchi nalla iruku,movie pathi pesitu iruntaanga,movie pathi pesitu iruntaanga indha katchi nalla iruku
+vandhu karai pakkam ukkarunga,boat la travel panrom,karai ,கரை /கறை ,shore place ,கரை ,vandhu karai pakkam ukkarunga,boat la travel panrom,boat la travel panrom vandhu karai pakkam ukkarunga
+shirt la karai poturuku da,washing panna solraanga,karai ,கரை /கறை ,stain ,கறை ,shirt la karai poturuku da,washing panna solraanga,washing panna solraanga shirt la karai poturuku da
+kadai close aayiduchu pola,shopping pathi pesitu irunthanga,kadai ,கடை /காடை ,shop ,கடை ,kadai close aayiduchu pola,shopping pathi pesitu irunthanga,shopping pathi pesitu irunthanga kadai close aayiduchu pola
+iniku kadai fry pannlama,evening dinner plan,kadai ,கடை /காடை ,animal ,காடை ,iniku kadai fry pannlama,evening dinner plan,evening dinner plan iniku kadai fry pannlama
+building eri yudu,building la fire accident ,eri ,எரி /எறி ,burn ,எரி ,building eri yudu,building la fire accident,building la fire accident building eri yudu
+ball ah thooki eri,friends vilayadinom,eri ,எரி /எறி ,throw ,எறி ,ball ah thooki eri,friends vilayadinom,friends vilayadinom ball ah thooki eri
+oli eluppatha ,romba sound irukku ,oli ,ஒலி/ஒளி /ஒழி,sound ,ஒலி ,oli eluppatha,romba sound irukku,romba sound irukku oli eluppatha
+oli eluppatha ,romba bright irukku ,oli ,ஒலி/ஒளி /ஒழி,light ,ஒளி ,oli eluppatha,romba bright irukku,romba bright irukku oli eluppatha
+indha habit ah oli da,friend advice pannan,oli ,ஒலி/ஒளி /ஒழி,destroy ,ஒழி,indha habit ah oli da,friend advice pannan,friend advice pannan indha habit ah oli da
+inda chain tharam apdi,jewellery vangunom,tharam ,தரம் /தாரம் ,quality ,தரம் ,inda chain tharam apdi,jewellery vangunom,jewellery vangunom inda chain tharam apdi
+un tharam epdi irukuranga,marriage ayitu,tharam ,தரம் /தாரம் ,wife ,தாரம் ,un tharam epdi irukuranga,marriage ayitu,marriage ayitu un tharam epdi irukuranga
+avana mela pali podra,fight panaanga,pali ,பலி /பழி ,blame ,பழி ,avana mela pali podra,fight panaanga,fight panaanga avana mela pali podra
+kida pali potanga,kovil la function ,pali ,பலி /பழி ,sacrifice ,பலி ,kida pali potanga,kovil la function,kovil la function kida pali potanga
+ennaku sariyana vali theriyala,enna decide panna/solution/way,vali ,வழி /வலி ,way ,வழி ,ennaku sariyana vali theriyala,enna decide panna/solution/way,enna decide panna/solution/way ennaku sariyana vali theriyala
+kai rombha valikudu,injury ayitu/medicine/pain,vali ,வழி /வலி ,pain ,வலி ,kai rombha valikudu,injury ayitu/medicine/pain,injury ayitu/medicine/pain kai rombha valikudu
+kali  matha va pathom,temple ponom/name / peru,kali ,காளி / களி /கழி ,person ,காளி ,kali matha va pathom,temple ponom/name / peru,temple ponom/name / peru kali matha va pathom
+kali sapten,morning breakfast enna/sapadu/ food,kali ,காளி / களி /கழி ,food ,களி ,kali sapten,morning breakfast enna/sapadu/ food,morning breakfast enna/sapadu/ food kali sapten
+expenses a kali chitu sollu ,inda month budget podunga,kali ,காளி / களி /கழி ,subtract ,கழி ,expenses a kali chitu sollu,inda month budget podunga,inda month budget podunga expenses a kali chitu sollu
+manam sari illa,sad a  iruken,manam ,மனம் / மணம் /மானம் ,heart ,மனம் ,manam sari illa,sad a iruken,sad a iruken manam sari illa
+nalla manam varudu,perfume podranga,manam ,மனம் / மணம் /மானம் ,smell ,மணம் ,nalla manam varudu,perfume podranga,perfume podranga nalla manam varudu
+manam pochu da,shame a iruku,manam ,மனம் / மணம் /மானம் ,Dignity ,மானம் ,manam pochu da,shame a iruku,shame a iruku manam pochu da
+kuli la poi vilugada,safe a po,kuli,குழி /குளி ,hole ,குழி ,kuli la poi vilugada,safe a po,safe a po kuli la poi vilugada
+kulika poren,thanni  bathroom/river poren,kuli,குழி /குளி ,bath ,குளி ,kulika poren,thanni bathroom/river poren,thanni bathroom/river poren kulika poren
+patham valikkuthu ,romba pain irukka /kal/kaal/foot,patham ,பாதம் /பத்தாம் /பாதாம் ,foot ,பாதம் ,patham valikkuthu,romba pain irukka /kal/kaal/foot,romba pain irukka /kal/kaal/foot patham valikkuthu
+patham vahuppu ,enna padikkura /class/section/standard,patham ,பாதம் /பத்தாம் /பாதாம் ,ten ,பத்தாம் ,patham vahuppu,enna padikkura /class/section/standard,enna padikkura /class/section/standard patham vahuppu
+patham saapuduren ,enna sapudura ,patham ,பாதம் /பத்தாம் /பாதாம் ,seed ,பாதாம் ,patham saapuduren,enna sapudura,enna sapudura patham saapuduren
+entha moolai ,corner la  irukku ,moolai ,மூளை /மூலை ,corner ,மூலை ,entha moolai,corner la irukku,corner la irukku entha moolai
+moolai nallave work pannum ,sense irukka ,moolai ,மூளை /மூலை ,brain ,மூளை ,moolai nallave work pannum,sense irukka,sense irukka moolai nallave work pannum

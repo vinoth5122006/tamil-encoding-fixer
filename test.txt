@@ -1,0 +1,192 @@
+#                 CELL 2 — TESTING PIPELINE (OpenRouter)
+
+import pickle
+import pandas as pd
+import requests
+from sklearn.metrics.pairwise import cosine_similarity
+import os
+import json
+
+# CONFIG — set your OpenRouter key & model here
+
+OPENROUTER_API_KEY = ""   # <-- replace with your key
+OPENROUTER_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions"
+
+# Default model — change if you want another model available on OpenRouter
+
+MODEL_NAME = ""  # <-- replace with the model name
+
+# Strict system instruction for exact transliteration (no correction)
+
+SYSTEM_PROMPT = (
+    "You are a STRICT COLLOQUIAL TAMIL TRANSLITERATOR.\n\n"
+    "Your ONLY job:\n"
+    "- Convert the user's Tanglish (Latin script Tamil) EXACTLY into Tamil script.\n"
+    "- Use PURE COLLOQUIAL SPOKEN TAMIL (street/formal mix based ONLY on sound).\n"
+    "- DO NOT correct grammar.\n"
+    "- DO NOT change slang.\n"
+    "- DO NOT fix spelling.\n"
+    "- DO NOT rewrite sentences.\n"
+    "- DO NOT use formal Tamil.\n"
+    "- DO NOT use 'உள்ளீடு', 'இங்கே', 'வழங்குகிறது' etc.\n\n"
+    "Rules:\n"
+    "- Just convert sound → Tamil letters.\n"
+    "- Preserve slang fully.\n"
+    "- Preserve mistakes.\n"
+    "- Preserve repeated letters.\n"
+    "- If the user writes 'peiyuthu', convert to 'பெய்யுது'.\n"
+    "- If they write 'sapten', convert to 'சாப்டேன்'.\n"
+    "- If they write 'irukken', convert to 'இருக்கேன்'.\n"
+    "- If they write 'saringa', convert to 'சரிங்க'.\n"
+    "Output:\n"
+    "- ONLY the Tamil transliteration.\n"
+    "- NO explanation.\n"
+    "- NO formatting.\n"
+    "- NO English characters.\n"
+)
+
+# Load artifacts
+
+with open("phonetic_map.pkl","rb") as f:
+    PHONETIC = pickle.load(f)
+
+with open("tfidf.pkl","rb") as f:
+    vectorizer = pickle.load(f)
+
+df = pd.read_csv("")  # <-- replace with the dataset name
+
+col_amb = "Ambiguous Word"
+col_tam = "Correct Tamil Output"
+col_ctx = "Normalized_Context"
+
+
+# OpenRouter call: non-streaming chat completion (strict transliteration)
+
+def openrouter_transliterate(text, model=MODEL_NAME, api_key=OPENROUTER_API_KEY):
+    """
+    Sends a chat completion request to OpenRouter with a strict system prompt
+    to force exact transliteration (no grammar correction).
+    """
+    if not text or not text.strip():
+        return ""
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}"
+    }
+
+    user_prompt = f"Transliterate exactly (no correction):\n\n{text}"
+
+    body = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user",   "content": user_prompt}
+        ],
+        "temperature": 0.0,
+        "max_tokens": 256
+    }
+
+    try:
+        resp = requests.post(OPENROUTER_ENDPOINT, headers=headers, json=body, timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+        # Extract content robustly (OpenRouter returns OpenAI-compatible shape)
+        if "choices" in data and len(data["choices"])>0:
+            choice = data["choices"][0]
+            # chat style
+            if "message" in choice and isinstance(choice["message"], dict):
+                content = choice["message"].get("content") or ""
+                # If content is a dict with parts, join them
+                if isinstance(content, dict) and "text" in content:
+                    return content["text"].strip()
+                return str(content).strip()
+            # older style
+            if "text" in choice:
+                return str(choice["text"]).strip()
+        # fallback: try top-level fields or return text dump
+        if "output" in data:
+            return str(data["output"])[:1000].strip()
+        return json.dumps(data)[:1000]
+    except Exception as e:
+        print("OpenRouter error:", e)
+        # fallback: return the input unchanged
+        return text
+
+# ------------------------------
+# Transliterator Class (pipeline + OpenRouter)
+# ------------------------------
+class Transliterator:
+    def __init__(self, df, vectorizer, phonetic):
+        self.df = df
+        self.vectorizer = vectorizer
+        self.phonetic = phonetic
+
+    def basic(self, w):
+        return self.phonetic.get(w.lower(), w)
+
+    def transliterate(self, sentence, previous):
+        # Original pipeline: token-level mapping using context
+        words = sentence.lower().split()
+        output = []
+        explanation = []
+        combined = (previous + " " + sentence).strip()
+
+        for w in words:
+            # safe check: skip empty tokens
+            if not w:
+                continue
+            subset = self.df[self.df[col_amb].astype(str).str.lower() == w]
+
+            if len(subset) == 0:
+                output.append(self.basic(w))
+                continue
+
+            best_sim = -1
+            best_row = None
+
+            for _, row in subset.iterrows():
+                try:
+                    v = self.vectorizer.transform([combined, row[col_ctx]])
+                    sim = cosine_similarity(v)[0][1]
+                except Exception:
+                    sim = 0
+                if sim > best_sim:
+                    best_sim = sim
+                    best_row = row
+
+            tamil = best_row[col_tam]
+            output.append(tamil)
+            explanation.append(f"'{w}' → matched ctx: '{best_row[col_ctx]}' (sim={best_sim:.3f})")
+
+        # Intermediate pipeline output (Tanglish + mapped Tamil words)
+        intermediate_output = " ".join(output).strip()
+
+        # Send intermediate to OpenRouter for pure Tamil output (strict transliteration)
+        final_output = openrouter_transliterate(intermediate_output)
+
+        return intermediate_output, final_output, explanation
+
+
+# Run
+
+trans = Transliterator(df, vectorizer, PHONETIC)
+
+print("\n Ready!")
+prev_msg = input(" Previous message: ")
+curr_msg = input(" Current message: ")
+
+intermediate, final, expl = trans.transliterate(curr_msg, prev_msg)
+
+print("\n")
+print(" INTERMEDIATE OUTPUT (Pipeline)")
+print("\n")
+print(intermediate)
+
+print("\n")
+print("FINAL OUTPUT (Pure Tamil — OpenRouter)")
+print("\n")
+print(final)
+
+print("\nEXPLANATION:")
+for e in expl:
+    print("  ", e)
